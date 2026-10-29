@@ -1,0 +1,76 @@
+.lf { --lf-green:#047857;--lf-ink:#0f172a;--lf-muted:#475569;--lf-line:#dbe5e4; color:var(--lf-ink);font-family:Heebo,sans-serif;direction:rtl;scroll-margin-top:90px; }
+.lf [hidden] { display:none!important; }
+.lf-section { padding:64px 24px;background:#f8fafc;border-block:1px solid #0f172a0d; }
+.lf-wrap { max-width:1200px;margin:0 auto; }
+.lf-heading { text-align:center;margin-bottom:30px; }
+.lf-eyebrow { color:var(--lf-green);font-size:14px;font-weight:700;margin:0 0 10px; }
+.lf h2 { font-size:clamp(26px,3vw,38px);line-height:1.35;font-weight:900;margin:0 0 12px; }
+.lf-intro { color:var(--lf-muted);font-size:17px;line-height:1.8; }
+.lf-search-box { background:white;border:1px solid var(--lf-line);border-radius:16px;padding:28px;box-shadow:0 12px 36px #0f172a08; }
+.lf-tabs { display:flex;gap:8px;margin-bottom:24px;padding:4px;background:#f1f5f9;border-radius:9px;width:fit-content; }
+.lf-tab { padding:10px 22px;border-radius:6px;color:var(--lf-muted);font-weight:700;font-size:15px;transition:background .2s; }
+.lf-tab[aria-pressed="true"] { color:var(--lf-green);background:white;box-shadow:0 2px 8px #0f172a10; }
+.lf-controls { display:grid;grid-template-columns:1fr 1.5fr auto;gap:18px;align-items:end; }
+.lf label { display:block;font-size:14px;font-weight:700;margin-bottom:8px; }
+.lf input,.lf select { width:100%;height:52px;border:1px solid #cbd5e1;border-radius:7px;background:white;color:var(--lf-ink);font:inherit;font-size:16px;padding:0 14px; }
+.lf input { direction:ltr;text-align:right; }
+.lf input::placeholder { color:#64748b;opacity:1; }
+.lf input:focus,.lf select:focus { outline:2px solid #04785755;outline-offset:2px;border-color:var(--lf-green); }
+.lf button:focus-visible,.lf a:focus-visible { outline:3px solid #0284c7;outline-offset:4px; }
+.lf-submit,.lf-primary { min-height:52px;padding:13px 28px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--lf-green);color:white;border:1px solid var(--lf-green);border-radius:7px;font-size:16px;font-weight:700;text-decoration:none; }
+.lf-submit:hover,.lf-primary:hover { background:#065f46; }
+.lf-submit:disabled { opacity:.6;cursor:wait; }
+.lf-lamp-input { grid-column:1/3; }
+.lf-note { font-size:13px;line-height:1.65;color:var(--lf-muted);margin-top:14px; }
+.lf-meta { display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;font-size:14px;color:var(--lf-muted);margin-top:15px; }
+.lf-reset { color:var(--lf-green);text-decoration:underline;text-underline-offset:4px;font-weight:600; }
+.lf-status { margin:20px 0;font-size:16px;color:var(--lf-muted);line-height:1.7; }
+.lf-error { color:#991b1b;background:#fef2f2;border:1px solid #fecaca;padding:18px;border-radius:8px; }
+.lf-results { display:grid;grid-template-columns:1fr;gap:24px;margin-top:25px; }
+.lf-card { border:1px solid var(--lf-line);border-radius:12px;background:white;overflow:hidden;display:flex;flex-direction:column; }
+.lf-card-photo { background:white;padding:20px 20px 0;text-align:center; }
+.lf-card img { width:100%;height:180px;object-fit:contain; }
+.lf-illustration { display:block;font-size:11px;color:#64748b;line-height:1.6;text-align:center;margin:6px 0 16px; }
+.lf-card-body { padding:4px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1; }
+.lf-brand { color:var(--lf-green);font-size:13px;font-weight:700; }
+.lf-card h3 { direction:ltr;text-align:right;font-size:23px;font-weight:800;line-height:1.3;overflow-wrap:anywhere; }
+.lf-part { margin:0;font-size:14px;color:var(--lf-muted); }
+.lf-part bdi { color:var(--lf-ink);font-weight:700; }
+.lf-price { font-size:14px;line-height:1.7;color:var(--lf-muted);margin-bottom:4px; }
+.lf-card-link { padding:11px 18px;border-radius:6px;background:#0478570c;border:1px solid #04785733;color:var(--lf-green);font-size:15px;font-weight:700;margin-top:auto;text-align:center;text-decoration:none; }
+.lf-card-link:hover { background:var(--lf-green);color:white; }
+.lf-more-wrap { text-align:center;margin-top:28px; }
+.lf-more { border:1px solid var(--lf-green);border-radius:7px;color:var(--lf-green);padding:12px 28px;font-size:15px;font-weight:700;background:white; }
+.lf-empty { text-align:center;border:1px dashed #cbd5e1;border-radius:12px;padding:36px 20px;background:white; }
+.lf-empty a { color:var(--lf-green);text-decoration:underline; }
+.lf-detail { padding:50px 24px 70px;background:#f8fafc;min-height:60vh; }
+.lf-back { color:var(--lf-green);display:inline-block;text-decoration:underline;text-underline-offset:4px;margin-bottom:30px; }
+.lf-detail-grid { display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:start;background:white;border:1px solid var(--lf-line);border-radius:16px;padding:40px; }
+.lf-detail h1 { font-size:clamp(28px,3vw,42px);line-height:1.35;font-weight:900;margin:10px 0 20px; }
+.lf-detail-image { width:100%;height:350px;object-fit:contain; }
+.lf-specs { margin:24px 0; }
+.lf-specs div { display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid #e2e8f0;font-size:15px; }
+.lf-specs dt { color:var(--lf-muted); }
+.lf-specs dd { text-align:left;font-weight:700;overflow-wrap:anywhere; }
+.lf-detail-actions { display:flex;gap:10px;flex-wrap:wrap;margin-top:22px; }
+.lf-secondary { padding:13px 24px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;color:var(--lf-green);border:1px solid var(--lf-green);border-radius:7px;font-weight:700; }
+.lf-related { margin-top:40px; }
+.lf-related h2 { font-size:24px; }
+.lf-related-links { display:flex;flex-wrap:wrap;gap:10px;margin-top:20px; }
+.lf-related-links a { background:white;border:1px solid var(--lf-line);padding:8px 14px;border-radius:6px;font-size:14px;direction:ltr; }
+.lf-results .lf-card { display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,1.2fr);border-radius:20px;box-shadow:0 12px 38px #0f172a0b; }
+.lf-results .lf-card-photo { padding:30px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #e2e8f0; }
+.lf-results .lf-card img { height:300px;width:100%;object-fit:contain; }
+.lf-results .lf-card-body { padding:32px;gap:12px; }
+.lf-results .lf-card h3 { font-size:32px; }
+.lf-results .lf-part { font-size:20px; }
+.lf-results .lf-price { font-size:23px;font-weight:800;color:var(--lf-ink); }
+.lf-stock { color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:20px;padding:7px 14px;width:fit-content;font-size:14px;font-weight:700; }
+.lf-contact-help { font-size:16px;line-height:1.8;color:#334155; }
+.lf-phone-number { display:inline-block;direction:ltr;font-size:22px;font-weight:800;color:#047857;text-decoration:underline;text-underline-offset:4px;white-space:nowrap; }
+.lf-call-strip { display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;margin:18px auto 0;padding:13px 20px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;width:fit-content;font-size:16px; }
+.lf-results .lf-detail-actions { margin-top:4px; }
+@media(max-width:1000px){.lf-results{grid-template-columns:1fr!important}}
+@media(max-width:650px){.lf-results .lf-card{grid-template-columns:1fr}.lf-results .lf-card-photo{border-left:0;border-bottom:1px solid #e2e8f0;padding:20px}.lf-results .lf-card img{height:230px}.lf-results .lf-card-body{padding:22px}.lf-results .lf-card h3{font-size:27px}.lf-results .lf-detail-actions>*{width:100%}}
+@media(max-width:1000px){.lf-results{grid-template-columns:repeat(2,minmax(0,1fr))}.lf-detail-grid{gap:28px;padding:26px}.lf-controls{grid-template-columns:1fr 1fr}.lf-submit{grid-column:1/-1}.lf-lamp-input{grid-column:1/-1}}
+@media(max-width:600px){.lf-section{padding:42px 18px}.lf-search-box{padding:20px 16px}.lf-tabs{width:100%}.lf-tab{flex:1;padding:10px 9px;font-size:14px}.lf-controls{grid-template-columns:1fr;gap:16px}.lf-results{grid-template-columns:1fr;gap:16px}.lf-meta{font-size:12px;align-items:flex-start}.lf-card img{height:160px}.lf-detail{padding:30px 18px 50px}.lf-detail-grid{grid-template-columns:1fr;padding:20px;gap:20px}.lf-detail-image{height:240px}.lf-detail-actions>*{width:100%}.lf-specs div{font-size:14px}.lf-note{font-size:12px}}
