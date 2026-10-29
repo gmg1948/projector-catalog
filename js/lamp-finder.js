@@ -1,4 +1,4 @@
-import { loadCatalog, findMatches, itemUrl, priceText, whatsappUrl, element } from './catalog.js';
+import { loadCatalog, findMatches, itemUrl, priceText, whatsappUrl, element, normalize } from './catalog.js';
 const root = document.getElementById('lamp-finder');
 const form = root.querySelector('form');
 const brand = root.querySelector('#lf-brand');
@@ -98,16 +98,17 @@ root.querySelectorAll('.lf-tab').forEach(button => button.addEventListener('clic
 }));
 brand.addEventListener('change', () => { model.value = ''; updateSuggestions(); results.replaceChildren(); status.textContent = 'בחרו דגם מקרן להצגת הנורה המתאימה.'; more.hidden = true; });
 let autoTimer;
-async function automaticSearch() {
+async function automaticSearch(navigate = false) {
   if (!catalog) return;
   const query = mode === 'lamp' ? lamp.value.trim() : model.value.trim();
   if (!query) { results.replaceChildren(); status.textContent = ''; more.hidden = true; return; }
   matches = findMatches(catalog.models, mode === 'lamp' ? { lamp: query } : { brand: brand.value, model: query });
+  if (navigate && matches.length === 1 && normalize(mode === 'lamp' ? matches[0].lamp.lampPartNumber : matches[0].model) === normalize(query)) { window.location.assign(itemUrl(matches[0])); return; }
   renderMatches();
 }
 for (const input of [model, lamp]) {
   input.addEventListener('input', () => { clearTimeout(autoTimer); autoTimer = setTimeout(automaticSearch, 180); });
-  input.addEventListener('change', () => { clearTimeout(autoTimer); automaticSearch(); });
+  input.addEventListener('change', () => { clearTimeout(autoTimer); automaticSearch(true); });
 }
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -115,6 +116,7 @@ form.addEventListener('submit', async event => {
     await ensureCatalog();
     if (mode === 'lamp' && !lamp.value.trim()) { lamp.focus(); status.textContent = 'הקלידו מספר נורה לחיפוש.'; return; }
     matches = findMatches(catalog.models, mode === 'lamp' ? { lamp: lamp.value.trim() } : { brand: brand.value, model: model.value.trim() });
+    if (matches.length === 1) { window.location.assign(itemUrl(matches[0])); return; }
     renderMatches();
   } catch { /* ensureCatalog shows an explicit retryable error. */ }
 });
@@ -123,3 +125,4 @@ root.querySelector('#lf-reset').addEventListener('click', () => {
   form.reset(); matches = []; shown = 0; results.replaceChildren(); status.textContent = ''; status.className = 'lf-status'; more.hidden = true; updateSuggestions();
 });
 ensureCatalog().catch(() => {});
+
